@@ -1,25 +1,27 @@
-import { useEffect, useState } from 'react'
 import { supabase } from '../supabase/client'
-import Navbar from '../components/Navbar'
-import TaskCard from '../components/TaskCard'
-import ProjectCard from '../components/ProjectCard'
+import { useEffect, useState } from 'react'
 
 export default function Dashboard() {
-  const [projects, setProjects] = useState([])
+  const [user, setUser] = useState(null)
 
-  useEffect(()=>{
-    const fetchProjects = async ()=>{
-      const { data } = await supabase.from('projects').select('*')
-      setProjects(data)
-    }
-    fetchProjects()
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data.user)
+    })
   }, [])
 
+  const createProject = async () => {
+    await supabase.from('projects').insert({
+      title: "My First Project",
+      user_id: user.id
+    })
+    alert("Project created!")
+  }
+
   return (
-    <div className="container">
-      <Navbar />
+    <div>
       <h1>Dashboard</h1>
-      {projects.map(p=> <ProjectCard key={p.id} project={p} />)}
+      <button onClick={createProject}>Create Project</button>
     </div>
   )
-  }
+}
