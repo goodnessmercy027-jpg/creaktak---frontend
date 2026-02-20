@@ -1,40 +1,42 @@
+:root {
+  --primary: #6C2BD9;
+  --accent: #00C2A8;
+  --bg-dark: #0F172A;
+  --bg-light: #F8FAFC;
+  --card: #1E293B;
+  --border: #E5E7EB;
+}
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #F8FAFC;
-  color: #0F172A;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.card {
-  background-color: #FFFFFF;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 15px;
-  margin-bottom: 15px;
+  background: var(--bg-dark);
+  color: white;
+  font-family: Inter, sans-serif;
 }
 
 button {
-  background-color: #6C2BD9;
-  color: white;
+  background: var(--primary);
+  padding: 12px 20px;
+  border-radius: 12px;
   border: none;
-  border-radius: 6px;
-  padding: 10px 15px;
-  cursor: pointer;
+  color: white;
+  font-weight: bold;
 }
 
-button:hover {
-  opacity: 0.9;
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
 }
 
-/* Responsive layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* HYBRID RESPONSIVE */
 @media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
+  .grid { grid-template-columns: 1fr; }
 }
+
