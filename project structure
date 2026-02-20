@@ -1,0 +1,18 @@
+creatak-frontend/
+├─ package.json
+├─ next.config.js
+├─ pages/
+│  ├─ index.js
+│  ├─ signup.js
+│  ├─ dashboard.js
+│  └─ project/[id].js
+├─ components/
+│  ├─ Navbar.js
+│  ├─ TaskCard.js
+│  ├─ ProjectCard.js
+│  ├─ ChatBox.js
+│  └─ FileUpload.js
+├─ supabase/
+│  └─ client.js
+└─ styles/
+   └─ globals.css
