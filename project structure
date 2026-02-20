@@ -1,12 +1,17 @@
-pages/index.js
-pages/onboarding.js
-pages/login.js
-pages/dashboard/client.js
-pages/dashboard/creator/[role].js
-
-components/CreatorWidgets.js
-components/ProgressTracker.js
-components/Avatar.js
-
-styles/globals.css
-supabase/client.js
+project-root/
+├─ pages/
+│  ├─ index.js
+│  ├─ onboarding.js
+│  ├─ login.js
+│  ├─ dashboard/
+│     ├─ client.js
+│     └─ creator/
+│        └─ [role].js
+├─ components/
+│  ├─ CreatorWidgets.js
+│  ├─ ProgressTracker.js
+│  └─ Avatar.js
+├─ styles/
+│  └─ globals.css
+└─ supabase/
+   └─ client.js
