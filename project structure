@@ -1,19 +1,12 @@
-creatak-frontend/
- ├─ pages/
- │    ├─ index.js           ← onboarding
- │    ├─ login.js
- │    ├─ dashboard.js
- │    └─ project/
- │         └─ [id].js      ← project detail
- ├─ components/
- │    ├─ Navbar.js
- │    ├─ ChatBox.js
- │    ├─ FileUpload.js
- │    ├─ TaskCard.js
- │    └─ ProgressTracker.js
- ├─ supabase/
- │    └─ client.js
- ├─ styles/
- │    └─ globals.css
- ├─ package.json
- └─ next.config.js
+pages/index.js
+pages/onboarding.js
+pages/login.js
+pages/dashboard/client.js
+pages/dashboard/creator/[role].js
+
+components/CreatorWidgets.js
+components/ProgressTracker.js
+components/Avatar.js
+
+styles/globals.css
+supabase/client.js
