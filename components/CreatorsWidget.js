@@ -1,18 +1,19 @@
-export default function CreatorWidgets({ role }) {
+import React from 'react'
+import ProgressTracker from './ProgressTracker'
+import Avatar from './Avatar'
 
-  const widgets = {
-    va: ["Tasks","Notes","Progress","Chat","Files"],
-    smm: ["Content Hub","Analytics","Tasks","Chat","Files"],
-    writer: ["Content Hub","Notes","Tasks","Chat","Files"],
-    designer: ["Design Upload","Tasks","Chat","Files"],
-    video: ["Video Upload","Tasks","Chat","Files"],
-    uiux: ["Wireframes","Tasks","Chat","Files"]
-  }
-
+export default function CreatorWidgets({ role, projects }) {
   return (
-    <div className="grid">
-      {widgets[role]?.map(w => <div key={w} className="card">{w}</div>)}
-      <div className="card" style={{opacity:0.3}}>🔒 Locked Features</div>
+    <div className="space-y-4">
+      {projects.map(p => (
+        <div key={p.id} className="bg-[#F8FAFC] p-4 rounded shadow-sm">
+          <div className="flex items-center justify-between mb-2">
+            <h2 className="font-semibold">{p.name}</h2>
+            <Avatar src={p.avatar_url} />
+          </div>
+          <ProgressTracker progress={p.progress} />
+        </div>
+      ))}
     </div>
   )
-             }
+    }
