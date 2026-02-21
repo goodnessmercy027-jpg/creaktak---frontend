@@ -1,19 +1,12 @@
-import React, { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import { supabase } from '../supabase/client'
-
 export default function Home() {
-  const router = useRouter()
+  return (
+    <div>
+      <h1>CreaTak</h1>
+      <p>Creators & Clients Workflow Platform</p>
 
-  useEffect(() => {
-    // Redirect logged in users to dashboard
-    const session = supabase.auth.session()
-    if (session) {
-      router.push('/dashboard/client')
-    } else {
-      router.push('/onboarding')
+      <a href="/onboarding">Start Onboarding</a>
+      <br />
+      <a href="/login">Login</a>
+    </div>
+  )
     }
-  }, [])
-
-  return <div className="text-center mt-20">Loading...</div>
-}
