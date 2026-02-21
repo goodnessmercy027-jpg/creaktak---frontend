@@ -1,9 +1,12 @@
-import { useRouter } from "next/router";
-import CreatorWidgets from "../../../components/CreatorWidgets";
+import CreatorWidgets from "../../../components/CreatorWidgets"
 
-export default function CreatorDashboard() {
-  const router = useRouter();
-  const { role } = router.query;
+export default function CreatorDashboard({ params }) {
+  const role = params?.role || "creator"
 
-  return <CreatorWidgets role={role} />;
+  return (
+    <div>
+      <h2>{role} Dashboard</h2>
+      <CreatorWidgets role={role} />
+    </div>
+  )
 }
