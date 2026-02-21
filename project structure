@@ -1,4 +1,25 @@
-project-root/
+/pages
+  index.js
+  onboarding.js
+  login.js
+  /dashboard
+    client.js
+    /creator
+      [role].js
+
+/components
+  CreatorWidgets.js
+  ProgressTracker.js
+  Avatar.js
+
+/supabase
+  client.js
+
+/styles
+  globals.css
+
+package.json
+next.config.jsroject-root/
 ├─ pages/
 │  ├─ index.js
 │  ├─ onboarding.js
