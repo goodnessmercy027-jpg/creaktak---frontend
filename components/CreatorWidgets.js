@@ -1,8 +1,12 @@
 export default function CreatorWidgets({ role }) {
   return (
-    <div style={{ padding: 20 }}>
-      <h2>Welcome, {role} Creator</h2>
-      <p>Your dashboard widgets will appear here.</p>
+    <div>
+      <h3>Widgets for {role}</h3>
+      <ul>
+        <li>Tasks</li>
+        <li>Messages</li>
+        <li>Payments</li>
+      </ul>
     </div>
-  );
-}
+  )
+    }
